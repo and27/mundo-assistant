@@ -3,6 +3,7 @@ import GuideDisplay from "@/components/GuideDisplay";
 import ErrorMessage from "./ErrorMessage";
 import EmptyState from "./EmptyState";
 import LoadingState from "./LoadingState";
+import GuideActions from "./GuideActions";
 
 interface ResultsDisplayProps {
   isLoading: boolean;
@@ -24,7 +25,12 @@ export default function ResultsDisplay({
     return <ErrorMessage message={error} />;
   }
   if (guide) {
-    return <GuideDisplay guide={guide} />;
+    return (
+      <>
+        <GuideActions guide={guide} />
+        <GuideDisplay guide={guide} />
+      </>
+    );
   }
   return <EmptyState />;
 }

@@ -49,11 +49,13 @@ export async function POST(request: Request) {
 
     const finalGuide: MundoAssistantGuide = JSON.parse(finalGuideString);
     return NextResponse.json(finalGuide);
-  } catch (error: any) {
-    console.error("Internal Server Error:", error.message);
-    return NextResponse.json(
-      { error: "An internal server error occurred", details: error.message },
-      { status: 500 }
-    );
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error("Internal Server Error:", error.message);
+      return NextResponse.json(
+        { error: "An internal server error occurred", details: error.message },
+        { status: 500 }
+      );
+    }
   }
 }

@@ -8,7 +8,7 @@ interface GuideDisplayProps {
 
 const GuideDisplay: React.FC<GuideDisplayProps> = ({ guide }) => {
   return (
-    <div className="max-w-3xl mx-auto mt-8 animate-fade-in">
+    <div className="max-w-3xl mx-auto animate-fade-in">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-white">{guide.guideTitle}</h2>
         <div className="mt-2 flex justify-center gap-2">
