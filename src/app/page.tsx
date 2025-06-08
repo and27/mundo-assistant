@@ -14,7 +14,7 @@ export default function HomePage() {
       <div className="container mx-auto">
         <PageHeader />
         <InputForm isLoading={isLoading} onSubmit={generateGuide} />
-        <div className="mt-12">
+        <div className="mt-20">
           <ResultsDisplay
             isLoading={isLoading}
             error={error}

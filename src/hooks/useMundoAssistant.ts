@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { MundoAssistantGuide } from "@/types";
 
 const loadingMessages = [
-  "Contactando a Mundo Assistant...",
+  "Contactando a Aynia...",
   "Analizando tu consulta...",
   "Paso 1: Generando el borrador creativo...",
   "Consultando el libro de sabiduría...",
@@ -23,7 +23,7 @@ export function useMundoAssistant() {
     if (isLoading) {
       let messageIndex = 0;
       const interval = setInterval(() => {
-        if (loadingMessages.length <= messageIndex) {
+        if (loadingMessages.length >= messageIndex) {
           messageIndex = messageIndex + 1;
           setLoadingMessage(loadingMessages[messageIndex]);
         }

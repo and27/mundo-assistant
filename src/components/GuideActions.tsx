@@ -33,8 +33,8 @@ export default function GuideActions({ guide }: GuideActionsProps) {
 
   const handleShare = async () => {
     const shareData = {
-      title: `Guía de Mundo Assistant: ${guide.guideTitle}`,
-      text: `He generado una guía útil sobre "${guide.guideTitle}" con Mundo Assistant. ¡Échale un vistazo!`,
+      title: `Guía de Aynia: ${guide.guideTitle}`,
+      text: `He generado una guía útil sobre "${guide.guideTitle}" con Aynia. ¡Échale un vistazo!`,
       url: window.location.href,
     };
 
@@ -55,26 +55,26 @@ export default function GuideActions({ guide }: GuideActionsProps) {
   };
 
   return (
-    <div className="max-w-3xl mx-auto my-8 text-center">
-      <div className="flex justify-center items-center gap-4 flex-wrap">
+    <div className="max-w-2xl mx-auto my-5 text-center">
+      <div className="grid md:grid-cols-3 gap-2 flex-wrap">
         <button
           onClick={handleSave}
           disabled={isSaved}
-          className="inline-flex items-center gap-2 px-6 py-3 font-semibold bg-white/10 border border-white/20 text-white rounded-lg hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="inline-flex items-center gap-2 text-sm px-6 py-2 font-semibold bg-white/10 border border-white/20 text-white rounded-lg hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           {isSaved ? <FaCheckCircle className="text-green-400" /> : <FaHeart />}
           {isSaved ? "Guía Guardada" : "Guardar Guía"}
         </button>
         <button
           onClick={handleDownload}
-          className="inline-flex items-center gap-2 px-6 py-3 font-semibold bg-gray-600/50 border border-white/20 text-white rounded-lg hover:bg-gray-600/80 transition-all"
+          className="inline-flex items-center gap-2 text-sm px-6 py-2 font-semibold bg-gray-600/50 border border-white/20 text-white rounded-lg hover:bg-gray-600/80 transition-all"
         >
           <FaDownload />
-          Descargar/Imprimir
+          Descargar / Imprimir
         </button>
         <button
           onClick={handleShare}
-          className="inline-flex items-center gap-2 px-6 py-3 font-semibold bg-gray-600/50 border border-white/20 text-white rounded-lg hover:bg-gray-600/80 transition-all"
+          className="inline-flex items-center gap-2 text-sm px-6 py-2 font-semibold bg-gray-600/50 border border-white/20 text-white rounded-lg hover:bg-gray-600/80 transition-all"
         >
           <FaShareAlt />
           Compartir

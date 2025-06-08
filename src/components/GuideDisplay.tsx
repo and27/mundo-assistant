@@ -1,6 +1,7 @@
 import { MundoAssistantGuide } from "@/types";
 import PillarCard from "./PillarCard";
 import { FaBookOpen, FaComments, FaLightbulb } from "react-icons/fa";
+import GuideActions from "./GuideActions";
 
 interface GuideDisplayProps {
   guide: MundoAssistantGuide;
@@ -9,9 +10,9 @@ interface GuideDisplayProps {
 const GuideDisplay: React.FC<GuideDisplayProps> = ({ guide }) => {
   return (
     <div className="max-w-3xl mx-auto animate-fade-in">
-      <div className="text-center mb-8">
+      <div className="text-center mb-10">
         <h2 className="text-3xl font-bold text-white">{guide.guideTitle}</h2>
-        <div className="mt-2 flex justify-center gap-2">
+        <div className="mt-2 flex flex-col md:flex-row justify-center gap-2">
           {guide.tags.map((tag) => (
             <span
               key={tag}
@@ -22,6 +23,7 @@ const GuideDisplay: React.FC<GuideDisplayProps> = ({ guide }) => {
           ))}
         </div>
       </div>
+      <GuideActions guide={guide} />
 
       <div className="space-y-6">
         <PillarCard icon={<FaBookOpen />} title="La Metáfora (El Cuento)">

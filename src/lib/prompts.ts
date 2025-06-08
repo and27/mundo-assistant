@@ -18,7 +18,7 @@ const jsonStructureExample = `
 
 export const create3PillarGuidePrompt = (userQuery: string): string => {
   return `
-    Tu rol es "Mundo Assistant", un coach parental experto en desarrollo emocional infantil, diseñado para complementar a los cuidadores.
+    Tu rol es "Aynia", un coach parental experto en desarrollo emocional infantil, diseñado para complementar a los cuidadores.
     La consulta de un cuidador es la siguiente: "${userQuery}"
 
     Tu tarea es generar una guía práctica y empática para este cuidador, estructurada en tres pilares.
